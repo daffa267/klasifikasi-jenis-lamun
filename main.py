@@ -36,7 +36,7 @@ knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(X_train, y_train)
 
 
-# input gambar
+# baca gambar
 def klasifikasi_gambar(image_path, img_label, result_text):
     img = cv2.imread(image_path)
     if img is None:
@@ -87,7 +87,7 @@ def tampilkan_gui():
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp")])
         if file_path:
             klasifikasi_gambar(file_path, img_label, result_text)
-
+    # input gambar
     browse_btn = tk.Button(root, text="Buka Gambar", command=on_browse)
     browse_btn.pack(pady=10)
 
