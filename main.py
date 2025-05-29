@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import tkinter as tk
 from tkinter import filedialog
+from sklearn.metrics import accuracy_score
 
 
 # ektraksi GLCM
@@ -34,6 +35,13 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, 
 # nilai K 
 knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(X_train, y_train)
+
+# Prediksi data uji
+y_pred = knn.predict(X_test)
+
+# Hitung akurasi
+akurasi = accuracy_score(y_test, y_pred)
+print(f"Akurasi model: {akurasi * 100:.2f}%")
 
 
 # baca gambar
