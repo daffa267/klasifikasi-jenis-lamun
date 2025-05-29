@@ -22,7 +22,7 @@ def glcm_feature_extraction(image):
 
 
 # baca dataset
-df = pd.read_csv('data_lamun_baru.csv')
+df = pd.read_csv('data_lamun.csv')
 X = df[['contrast', 'homogeneity', 'energy']]
 y = df['label']
 
